@@ -1,0 +1,49 @@
+<div class="ui menu nheader oauto">
+</div>
+<button class="ui primary button" {{action 'showPlan'}}>
+  Create
+</button>
+
+
+<div class="ui container">
+
+<div class="ui special cards">
+
+
+
+{{#each model}}
+
+	{{#link-to 'flows' id class="card"}}
+	    <div class="blurring dimmable image">
+	      <div class="ui dimmer">
+	        <div class="content">
+	          <div class="center">
+	            <div class="ui inverted button">Add Friend</div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="content">
+	      <a class="header"> {{name}} </a>
+	      <div class="meta">
+	        <span class="date">Create in Sep {{modifiedtime}} </span>
+	      </div>
+	    </div>
+	    <div class="extra content">
+	      <a>
+	        <i class="stop icon"></i>
+	        2 Nodes
+	      </a>
+		    </div>
+	  {{/link-to}}
+
+	  {{/each}}
+	</div>
+
+
+</div>
+
+
+
+{{partial 'dialogs/flow'}}
+{{outlet}}

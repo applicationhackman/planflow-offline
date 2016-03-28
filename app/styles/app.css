@@ -1,0 +1,202 @@
+html,body {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+  font-family: 'Fauna One', serif !important;
+	font-size: 14px;
+	overflow: hidden;
+}
+
+.body{
+	overflow: auto;
+}
+
+.nheader {
+	height: 58px;
+    z-index: 999 !important;
+}
+
+a {
+    color: inherit !important;
+    text-decoration: initial !important;
+}
+
+a:hover {
+    color: inherit !important;
+    text-decoration: initial !important;
+}
+
+a:active {
+    color: inherit !important;
+    text-decoration: initial !important;
+}
+
+.fx{
+	display: flex;
+}
+
+.cl {
+    flex-direction:column;
+}
+
+.fh{
+	height: 100%;
+}
+
+.fw{
+	width: 100%;
+}
+
+.pad24{
+  padding: 24px;
+}
+
+
+.w {
+    padding: 16px;
+    position: absolute;
+    z-index: 4;
+    border: 1px solid #2e6f9a;
+    box-shadow: 2px 2px 19px #e0e0e0;
+    -o-box-shadow: 2px 2px 19px #e0e0e0;
+    -webkit-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-box-shadow: 2px 2px 19px #e0e0e0;
+    -moz-border-radius: 8px;
+    /*border-radius: 8px;*/
+    opacity: 0.8;
+    cursor: move;
+    background-color: white;
+    font-size: 11px;
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+    width: 100px;
+    height: 60px;
+}
+
+.w:hover {
+    background-color: #5c96bc;
+    color: white;
+
+}
+
+.aLabel {
+    -webkit-transition: background-color 0.25s ease-in;
+    -moz-transition: background-color 0.25s ease-in;
+    transition: background-color 0.25s ease-in;
+}
+
+.aLabel.jsplumb-hover, .jsplumb-source-hover, .jsplumb-target-hover {
+    background-color: #1e8151;
+    color: white;
+}
+
+.aLabel {
+    background-color: white;
+    opacity: 0.8;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: 1px solid #346789;
+    cursor: pointer;
+}
+
+.ep {
+    position: absolute;
+    bottom: 37%;
+    right: 5px;
+    width: 1em;
+    height: 1em;
+    background-color: orange;
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+}
+.dp {
+    position: absolute;
+    bottom: 20%;
+    left: 5px;
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    cursor: pointer;
+    box-shadow: 0 0 2px black;
+    -webkit-transition: -webkit-box-shadow 0.25s ease-in;
+    -moz-transition: -moz-box-shadow 0.25s ease-in;
+    transition: box-shadow 0.25s ease-in;
+}
+
+.ep:hover {
+    box-shadow: 0 0 6px black;
+}
+
+.statemachine-demo .jsplumb-endpoint {
+    z-index: 3;
+}
+
+.padr20{
+    padding-right: 20px;
+}
+
+.field.flex2 {
+    padding-right: 8px;
+    /*width: 158px;*/
+    /*padding-right: 80px;*/
+}
+
+.field {
+    /*width: 45%;*/
+}
+
+.fx.reverse {
+    flex-direction: row-reverse;
+}
+
+.msidebar{
+    position: relative !important;
+    width: 280px !important;
+    margin: 0px !important;
+}
+
+div#editnode {
+    top: 50px;
+    width: 332px;
+    position: relative;
+    left: 0px !important;
+    margin-right: 2px !important;
+    margin: -50px 5px -8px -54px !important;
+    height: 100vh;
+    z-index: 99999;
+}
+
+.w.active {
+    outline: 1px dotted green;
+    outline-offset: 4px;
+}
+
+.enodeclose{
+    position: relative;
+    right: 12px;
+}
+
+.header.title {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.scroll{
+    overflow: scroll;
+}
+
+.sauto{
+ overflow: auto;
+}
+
+.ohid{
+    overflow: hidden;
+}
+
+.nomargin{
+    margin: 0px !important;
+}

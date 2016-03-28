@@ -1,0 +1,37 @@
+<div class="ui menu nheader nomargin">
+
+ 	<div class="ui item">
+ 		<div class="padr20">
+ 			Type	
+ 		</div>
+ 		{{render 'plantypes' this }}	
+  	</div>
+  	<div class="field fx">
+  		{{#each flowchartsymbols}}
+			{{render 'mainnode' this}}
+		{{/each}}	
+  	</div>
+	
+	
+	
+</div>
+<div class="fx fh fw ohid">
+
+	<div class="fh fw sauto pad24">
+
+		{{#each model.nodes}}
+			{{render 'node' this}}
+		{{/each}}	
+	</div>
+
+	{{#if editnode-dialog}}
+			<div class="fh msidebar">
+			{{partial 'dialogs/editnode'}}		
+		</div>
+	{{/if}}
+	
+</div>
+
+
+{{outlet}}
+

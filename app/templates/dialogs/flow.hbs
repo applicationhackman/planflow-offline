@@ -1,0 +1,33 @@
+{{#if createplandialog}}
+{{/if}}
+
+
+      {{#ui-modal name="profile" class="profile" onApprove=(action 'createPlan') onDeny=(action 'cancelPlan')}}
+        <i class="close icon"></i>
+        <div class="header">
+          New Plan
+        </div>
+        <form class="ui form pad24">
+        <div class="field">
+          <label> Name</label>
+          {{input type="text" valueBinding=newplan.name placeholder='Name'}}
+        </div>
+        <div class="field">
+          <label> Description</label>
+          {{input type="text" valueBinding=newplan.description placeholder='Description'}}
+        </div>
+
+      </form>
+
+        <div class="actions">
+            <div class="ui black deny button">
+              Cancel
+            </div>
+            <div class="ui positive right labeled icon button">
+              Ok
+              <i class="checkmark icon"></i>
+            </div>
+        </div>
+        
+      {{/ui-modal}}
+
