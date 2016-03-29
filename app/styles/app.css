@@ -12,8 +12,10 @@ html,body {
 }
 
 .nheader {
-	height: 58px;
+    height: 58px;
+	min-height: 58px;
     z-index: 999 !important;
+    border-radius: 0px !important;
 }
 
 a {
@@ -49,6 +51,10 @@ a:active {
 
 .pad24{
   padding: 24px;
+}
+
+.pad20{
+  padding: 20px;
 }
 
 
@@ -154,9 +160,11 @@ a:active {
 }
 
 .msidebar{
-    position: relative !important;
+    position: absolute !important;
     width: 280px !important;
     margin: 0px !important;
+    right: 0px !important;
+    top: 60px !important; 
 }
 
 div#editnode {
@@ -168,6 +176,7 @@ div#editnode {
     margin: -50px 5px -8px -54px !important;
     height: 100vh;
     z-index: 99999;
+    border-left: 1px solid #95a5a6;
 }
 
 .w.active {
@@ -177,12 +186,20 @@ div#editnode {
 
 .enodeclose{
     position: relative;
-    right: 12px;
+    padding: 14px 8px;
 }
 
 .header.title {
     font-size: 20px;
     font-weight: 200;
+}
+
+.header {
+    display: flex !important;
+    align-items: center;
+    font-weight: 200 !important;
+    height: 52px !important;
+    min-height: 52px !important;
 }
 
 .scroll{
@@ -199,4 +216,90 @@ div#editnode {
 
 .nomargin{
     margin: 0px !important;
+}
+.fsz22{
+    font-size: 22px;
+}
+
+.groupsidebar{
+    height: 100vh;
+    border-right: 1px solid rgba(128, 128, 128, 0.33);
+    width: 280px;
+    padding: 14px;
+}
+
+.groupadd{
+    font-size: 40px !important;
+    position: relative;
+    align-items: center;
+    top: 10px;
+    left: -4px;
+    color: #1dd2af;
+}
+
+.card.flow {
+    min-height: 180px !important;
+    height: 180px !important;
+    margin: 16px !important;
+    display: inline-block !important;
+}
+
+.pad10{
+    padding: 10px;
+}
+
+.viewbar{
+    padding: 18px;
+
+}
+
+.margin0{
+    margin: 0px !important;
+}
+
+.noshad{
+    box-shadow: none !important;
+}
+
+.bgreen{
+ background: #1dd2af !important;
+}
+
+
+.ui.item.nbf:before{
+    display: none;
+}
+
+.ui.item.nbf:after{
+    display: none;
+}
+
+.padl14{
+    padding-left: 14px !important;
+}
+
+.h130{
+    height: 130px;
+}
+
+input[type="color"] {
+    border: none;
+    width: 36px;
+    height: 28px;
+    position: relative;
+    top: 32px;
+    left: 234px;
+    background: transparent;
+}
+input[type="color"]:active{
+    outline: none !important;
+
+}
+
+.editable{
+    border: none;
+}
+
+.editable:active{
+    outline: none;   
 }

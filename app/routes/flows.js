@@ -32,11 +32,13 @@ export default Ember.Route.extend({
 			controller.set('model',model);
 
 			var nconnections = model.get('nconnections');
+			console.log("nconnections is ",nconnections)
+			if(nconnections !== undefined){
 
 	    			Em.run.later(function(){
 
 	    				for(var i=0; i<nconnections.length; i++){
-						   // console.log("CSK done ",nconnections[i]);
+						   console.log("CSK done ",nconnections[i]);
 						   if(nconnections[i] !== undefined){
 						   		var flowtype = (model.get('flowtype') !== undefined) ? model.get('flowtype') : "Bezier";
 		    					var con = instance.connect({ source: nconnections[i].sourceId, target: nconnections[i].targetId, type:"basic",connector:flowtype });
@@ -51,6 +53,7 @@ export default Ember.Route.extend({
 
 
 	    			},400)
+			}	    			
 	    			
 
 		}

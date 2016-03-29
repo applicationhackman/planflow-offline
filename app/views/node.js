@@ -156,7 +156,7 @@ export default Ember.View.extend({
 			 	$("#editnode").modal();
 			});
 
-	    	console.log("final ",cobj.get('controller.parentController').send, " nodes ",nodes[nodes.length-1].pid);
+	    	// console.log("final ",cobj.get('controller.parentController').send, " nodes ",nodes[nodes.length-1].pid);
 
 	    	cobj.get('controller.parentController').send('editNode',nodes[0].pid);
 

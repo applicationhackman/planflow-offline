@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
 			// }
 			// console.log(" this is ",this," in ",$(this).text());
 			// Ember.run.debounce(cobj,cobj.get('controller.parentController').updateConnectionLayer.bind(null,$(info.getOverlays().label.canvas),info),600);
-	},
+	},	
 	changingConnectionOverlay : function(){
 
 		// console.log("changingConnectionOverlay here ",this.get('params.id')," ",this.get('selectedConnection'));
@@ -48,20 +48,41 @@ export default Ember.Controller.extend({
 	},
 	actions : {
 		
+		flowsback : function(){
+			console.log("CSK trying to back ",this);
+			this.transitionToRoute('flow','all');
+		},
 		createNode : function (x,y,type) {
 
 			console.log("node x ",x," node y ",y);
 
 			var store = this.store;
 			var cobj = this;
-			var flow = store.findById('flow',this.get('params.id'));
-			flow.then(function(flow){
+
+			
+			// console.log(flow," flow ID is ",this.get('params.id'));
+			var flow = store.findById('flow',''+this.get('params.id'));
+
+			
+
+			store.findById('flow',''+this.get('params.id')).then(function(flow){
+
+				console.log("flow is here ",flow);
 
 				var name = "new";
 				var nnode = store.createRecord('nodeitem',{name:name,createtime:new Date(),modifiedtime:new Date(),top:y,left:x});
 				nnode.pid = nnode.id;
+				console.log("nnode is ");
+				if(flow.get('nodes') === undefined){
+					flow.set('nodes',[]);	
+				}
 				flow.get('nodes').pushObject(nnode);
 				flow.save();
+				
+				Em.run.later(function(){
+					$("#"+nnode.pid).css({left:x,top:y});
+				},600)
+				
 
 			});
 

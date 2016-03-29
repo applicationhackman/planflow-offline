@@ -1,9 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-		name 			: DS.atrr('string'),
+		name : DS.attr('string'),
 		createdtime 	: DS.attr('date'),
-		modifiedtime 	: DS.attr('date'),  
-		flows 			: DS.attr('')
-
+		modifiedtime 	: DS.attr('date'),
+		
 });

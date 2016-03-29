@@ -1,0 +1,19 @@
+
+<div class="content h130">
+  {{#link-to 'flows' model.id  class='header'}} 
+  		{{model.name}} 
+  {{/link-to}}
+  <div class="meta">
+    <span class="date">Create in Sep {{model.modifiedtime}} </span>
+  </div>
+</div>  
+
+<div class="extra content">
+  
+  <div class="fx">
+        <div> 	<i class="stop icon"></i>  2 Nodes </div>
+        <div>  <i class="setting left icon" {{action 'showEditDialog'}}></i> </div>
+      	
+   </div>
+
+</div>

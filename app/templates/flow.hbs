@@ -1,49 +1,73 @@
-<div class="ui menu nheader oauto">
-</div>
-<button class="ui primary button" {{action 'showPlan'}}>
-  Create
-</button>
+{{render 'appheader'}}
+
+<div class="fx fh">
 
 
-<div class="ui container">
+	<div class="fh groupsidebar">
+		<div class="fx">
+			<div class="ui icon input ">
+			{{input type='text' placeholder="Groups" value=newgroup.name onEvent="keypress" action="createGroup"}}
+			</div>
+			<div {{action 'createGroup'}} class="groupadd">
+				 <i class="add square icon"></i>
+			</div>	
 
-<div class="ui special cards">
+		</div>
+
+		<div class="ui divided items">
+		<div class="item">
+		  	{{#link-to 'flow' 'all'}}
+		      	All
+		     {{/link-to}} 
+		</div>
+		{{#each groups}}
+				  <div class="item">
+				  	{{#link-to 'flow' this.id}}
+				      	{{name}}
+				     {{/link-to}} 
+				  </div>
+
+		  {{/each}}	
+		</div>
+		
+	</div>	
+
+	<div class="ui container margin0 fh">
 
 
-
-{{#each model}}
-
-	{{#link-to 'flows' id class="card"}}
-	    <div class="blurring dimmable image">
-	      <div class="ui dimmer">
-	        <div class="content">
-	          <div class="center">
-	            <div class="ui inverted button">Add Friend</div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="content">
-	      <a class="header"> {{name}} </a>
-	      <div class="meta">
-	        <span class="date">Create in Sep {{modifiedtime}} </span>
-	      </div>
-	    </div>
-	    <div class="extra content">
-	      <a>
-	        <i class="stop icon"></i>
-	        2 Nodes
-	      </a>
-		    </div>
-	  {{/link-to}}
-
-	  {{/each}}
+	<div class="viewbar">
+		<div class="ui disabled icon input">
+		  <i class="search icon"></i>
+		  <input type="text" placeholder="Search...">
+		</div>	
+		<button class="ui primary button" {{action 'showPlan'}}>
+		  Create
+		</button>
 	</div>
 
 
+	<div class="ui special cards pad20 fh">
+
+
+	{{#each model}}
+		{{render "flowcard" this}}
+		
+
+		  {{/each}}
+		</div>
+
+
+	</div>
+
+
+	
 </div>
+
 
 
 
 {{partial 'dialogs/flow'}}
+{{partial 'editflow'}}
 {{outlet}}
+
+

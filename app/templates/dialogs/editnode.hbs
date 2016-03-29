@@ -1,5 +1,5 @@
 
-    {{#ui-modal name="profile" id="editnode" class="active" onApprove=(action 'saveNode') onDeny=(action 'cancelNode')}}
+    {{#ui-modal name="profile" id="editnode" class="active noshad" onApprove=(action 'saveNode') onDeny=(action 'cancelNode')}}
       
       <div class="header">
         <div class="fx">
@@ -17,14 +17,15 @@
               </div>
               <div class="field flex2">
                   <label>Text Color</label>
-                  {{input type="color" value=selectedNode.textcolor placeholder='Name'}}
+                  {{input type="color" value=selectedNode.textcolor placeholder='#000'}}
+                  {{input type="text" value=selectedNode.backgroundcolor placeholder='#000'}}
               </div>
               <div class="field flex2">
                   <label>Background Color</label>
-                  {{input type="color" value=selectedNode.backgroundcolor placeholder='Name'}}
+                  {{input type="color" value=selectedNode.backgroundcolor placeholder='#000'}}
+                  {{input type="text" value=selectedNode.textcolor placeholder='#000'}}
               </div>
-                
-      
+
 
       </form>
 
