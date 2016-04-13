@@ -8,7 +8,6 @@ export default Ember.View.extend({
 			$(this.$()).dropdown();
 			var items = $(this.$()).find('.menu').children();
 			var cobj = this;
-			console.log("items is ",items);
 			items.click(function(e){
 				cobj.send("chooenItem",e);
 			})

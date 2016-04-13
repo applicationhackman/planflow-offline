@@ -1,0 +1,10 @@
+{
+  "appId": "planflow",
+  "apiKey": "ed300332b3ba125c77d2056ea6dd64f12e17010c94d856fc079e99bd08944adf",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

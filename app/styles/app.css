@@ -12,8 +12,8 @@ html,body {
 }
 
 .nheader {
-    height: 58px;
-	min-height: 58px;
+    height: 50px;
+    min-height: 50px !important;
     z-index: 999 !important;
     border-radius: 0px !important;
 }
@@ -69,6 +69,7 @@ a:active {
     -moz-box-shadow: 2px 2px 19px #e0e0e0;
     -moz-border-radius: 8px;
     /*border-radius: 8px;*/
+    display: none;
     opacity: 0.8;
     cursor: move;
     background-color: white;
@@ -78,6 +79,8 @@ a:active {
     transition: background-color 0.25s ease-in;
     width: 100px;
     height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .w:hover {
@@ -176,6 +179,7 @@ div#editnode {
     margin: -50px 5px -8px -54px !important;
     height: 100vh;
     z-index: 99999;
+    top: 90px;
     border-left: 1px solid #95a5a6;
 }
 
@@ -186,7 +190,7 @@ div#editnode {
 
 .enodeclose{
     position: relative;
-    padding: 14px 8px;
+    padding: 14px 0px;
 }
 
 .header.title {
@@ -198,8 +202,17 @@ div#editnode {
     display: flex !important;
     align-items: center;
     font-weight: 200 !important;
-    height: 52px !important;
-    min-height: 52px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    font-size: 18px;
+}
+
+a{
+    /*color: #2185d0 !important;*/
+}
+
+a:hover:{
+    /*color: #2185d0 !important;*/
 }
 
 .scroll{
@@ -225,7 +238,7 @@ div#editnode {
     height: 100vh;
     border-right: 1px solid rgba(128, 128, 128, 0.33);
     width: 280px;
-    padding: 14px;
+    /*padding: 14px;*/
 }
 
 .groupadd{
@@ -234,7 +247,7 @@ div#editnode {
     align-items: center;
     top: 10px;
     left: -4px;
-    color: #1dd2af;
+    color: #16a085;
 }
 
 .card.flow {
@@ -242,6 +255,7 @@ div#editnode {
     height: 180px !important;
     margin: 16px !important;
     display: inline-block !important;
+    border: 1px solid rgba(128, 128, 128, 0.35);
 }
 
 .pad10{
@@ -249,7 +263,7 @@ div#editnode {
 }
 
 .viewbar{
-    padding: 18px;
+    padding: 14px 18px;
 
 }
 
@@ -262,7 +276,7 @@ div#editnode {
 }
 
 .bgreen{
- background: #1dd2af !important;
+ background: #16a085 !important;
 }
 
 
@@ -302,4 +316,85 @@ input[type="color"]:active{
 
 .editable:active{
     outline: none;   
+}
+
+.w60{
+    width: 60%;
+}
+
+.nobr{
+    border-radius:0px !important;
+}
+
+.closebox{
+    position: relative;
+    left: 88%;
+    top: -6px;
+}
+
+.fx2 {
+    flex-grow: 2;
+}
+
+.fx-aend{
+        justify-content: flex-end;
+}
+
+.white{
+    color: #fff !important;
+}
+
+.pad8{
+    padding: 8px;
+}
+
+.pad14{
+    padding: 12px 18px;
+}
+
+.bg-lgray{
+    background:rgba(149, 165, 166, 0.15)
+}
+
+.ui.positive.button{
+    background: #16a085 !important;
+}
+.pad16{
+    padding: 16px;
+}
+
+.flow.extra.content {
+    height: 48px;
+    background: rgba(128, 128, 128, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 0px 16px;
+}
+
+.item.header {
+    font-size: 18px !important;
+}
+
+.ui.button{
+    border: none !important;
+}
+
+.ui.modal > .close{
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    color: #000000 !important; 
+}
+.o-as{
+    overflow: auto;
+}
+.ui.primary.button{
+    background: #16a085 !important;
+}
+
+.h36{
+    height: 36px;
+}
+
+.ember-select {
+    height: 36px !important;
 }

@@ -4,9 +4,10 @@
 
 
 	<div class="fh groupsidebar">
-		<div class="fx">
+
+		<div class="fx pad14 bg-lgray">
 			<div class="ui icon input ">
-			{{input type='text' placeholder="Groups" value=newgroup.name onEvent="keypress" action="createGroup"}}
+			{{input type='text' placeholder="Create group" value=newgroup.name onEvent="keypress" action="createGroup"}}
 			</div>
 			<div {{action 'createGroup'}} class="groupadd">
 				 <i class="add square icon"></i>
@@ -14,56 +15,69 @@
 
 		</div>
 
-		<div class="ui divided items">
-		<div class="item">
+		<div class="ui divided items pad8">
+		<div class="item header">
 		  	{{#link-to 'flow' 'all'}}
 		      	All
 		     {{/link-to}} 
 		</div>
-		{{#each groups}}
-				  <div class="item">
+
+		 {{#each groups}}
+				  <div class="item header">
 				  	{{#link-to 'flow' this.id}}
 				      	{{name}}
 				     {{/link-to}} 
 				  </div>
 
 		  {{/each}}	
+
 		</div>
 		
 	</div>	
 
-	<div class="ui container margin0 fh">
+	<div class="margin0 fh fw">
 
 
-	<div class="viewbar">
-		<div class="ui disabled icon input">
-		  <i class="search icon"></i>
-		  <input type="text" placeholder="Search...">
-		</div>	
-		<button class="ui primary button" {{action 'showPlan'}}>
-		  Create
-		</button>
-	</div>
-
-
-	<div class="ui special cards pad20 fh">
-
-
-	{{#each model}}
-		{{render "flowcard" this}}
-		
-
-		  {{/each}}
+	<div class="viewbar bg-lgray fx">
+		<div class="fx2">
+			<div class="ui icon input" >
+			  <i class="search icon" ></i>
+			 {{input type="text" insert-newline="searchFlow" placeholder="Search plan"}}
+			</div>	
 		</div>
+		<div class="fx2 fx fx-aend">
+			<button class="ui primary button" {{action 'showPlan'}}>
+			  Create
+			</button>	
+		</div>
+		
+	</div>
 
+	
+
+
+	<div class="ui special pad20 fh o-as">
+
+		{{#if searchFlows.length}}
+
+				{{#each searchFlows}}
+					{{render "flowcard" this}}
+				{{/each}}
+
+			{{else}}
+
+				{{#each model}}
+					{{render "flowcard" this}}
+				{{/each}}				
+
+		{{/if}}		
 
 	</div>
 
+	</div>
 
 	
 </div>
-
-
 
 
 {{partial 'dialogs/flow'}}

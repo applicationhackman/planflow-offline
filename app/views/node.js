@@ -11,9 +11,12 @@ export default Ember.View.extend({
 			var bgc = (model.backgroundcolor === undefined) ? "#fff" : model.backgroundcolor;
 			var txtc = (model.textcolor === undefined) ? "#000" : model.textcolor;
 
-			this.$().css({left:model.left,top:model.top,background:bgc,color:txtc});
+			this.$().css({left:model.left,top:model.top,background:bgc,color:txtc,display:'inline-block'});
 
 			window.instance.draggable(this.$(),{
+				scope: "parent",
+				scroll: true,
+				scrollSensitivity: 100,
 				drag : function(obj){
 				}
 			});
@@ -76,11 +79,15 @@ export default Ember.View.extend({
 
         instance.bind("beforeDrop", function (connection) {
 
+        	console.log(" beforeDrop node is here ",cobj);
+        	// var fltype = cobj.get('controller.parentController.model.flowtype');
+        	var flow = cobj.get('controller').store.findById('flow',cobj.get("controller.parentController.model.id"));	
+        	// var con = instance.connect({ source: nconnections[i].sourceId, target: nconnections[i].targetId, type:'basic',connector:'Flowchart' });
         	var connection = instance.connect({ source: connection.sourceId, target: connection.targetId, type:"basic" });
         	var ncon = {'sourceId':connection.sourceId,'targetId':connection.targetId};
 
         	var id  = cobj.get('controller.parentController.params.id');
-			var flow = cobj.get('controller').store.findById('flow',id);
+			
 			flow.then(function(flow){
 
 				if(flow.get('nconnections') ===  undefined){
@@ -140,23 +147,16 @@ export default Ember.View.extend({
 	    });
 
 	     var nodes = this.get("controller.parentController.model.nodes");
-	     // console.log(nodes.length," node is gere ",model, " :: ",this,this.get("controller.parentController.model.nodes"), this.$().index());
 
-	     console.log("index ",nodes.length === this.$().index(), nodes.length , this.$().index());
 	     if(nodes.length-1 === this.$().index()){
-
 	    	var cobj = this;
-
 	    	$('.w').dblclick(function(e){
-
 	    		var index = $(e.currentTarget).index()-1;
 	    		var nodes = cobj.get("controller.model");
 	    		cobj.set("controller.selectedNode",nodes[index]);
 
 			 	$("#editnode").modal();
 			});
-
-	    	// console.log("final ",cobj.get('controller.parentController').send, " nodes ",nodes[nodes.length-1].pid);
 
 	    	cobj.get('controller.parentController').send('editNode',nodes[0].pid);
 

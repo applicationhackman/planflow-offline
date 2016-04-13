@@ -26,6 +26,8 @@ module.exports = function(defaults) {
   app.import('bower_components/jquery-ui/ui/mouse.js');
   app.import('bower_components/jquery-ui/ui/position.js');
   app.import('bower_components/jquery-ui/ui/resizable.js');
+  app.import('bower_components/spectrum/spectrum.css');
+  app.import('bower_components/spectrum/spectrum.js');
 
   return app.toTree();
 };

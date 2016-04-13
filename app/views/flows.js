@@ -2,7 +2,12 @@ import Ember from 'ember';
 
 export default Ember.View.extend({
 	classNames :['fw','fh','ohid'],
-	
+	didInsertElement : function (argument) {
+		 // console.log("Flows here ",arguments, this.get('model'));
+	},
+	modelLoaded : function(){
+			alert("model  modelLoaded");
+	}.observes('model'),
 	willDestroy () {
 		
 		// var connection = instance.getAllConnections();
@@ -10,6 +15,8 @@ export default Ember.View.extend({
 		// 	// instance.detach(connection[i]);
 		// 	// instance.hide(connection[i]);
 		// }
+
+
 		window.instance = null;		
 		$(".jsplumb-overlay").remove();
 		$(".jsplumb-connector").remove();

@@ -1,5 +1,5 @@
 
-<div class="content h130">
+<div class="content h130 pad16">
   {{#link-to 'flows' model.id  class='header'}} 
   		{{model.name}} 
   {{/link-to}}
@@ -8,11 +8,11 @@
   </div>
 </div>  
 
-<div class="extra content">
+<div class="flow extra content">
   
-  <div class="fx">
-        <div> 	<i class="stop icon"></i>  2 Nodes </div>
-        <div>  <i class="setting left icon" {{action 'showEditDialog'}}></i> </div>
+  <div class="fx fw">
+        <div class="fx2"> 	<i class="stop icon"></i>  {{model.nodes.length}} </div>
+        <div class="fx2 fx fx-aend">  <i class="setting left icon" {{action 'showEditDialog'}}></i> </div>
       	
    </div>
 

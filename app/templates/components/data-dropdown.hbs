@@ -1,0 +1,5 @@
+{{log model.model.flowtype "good things"}}
+{{#each model.plantypes}}
+	<div class="item" data-value={{val}}>{{name}}</div>
+{{/each}}
+{{yield}}

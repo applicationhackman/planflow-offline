@@ -2,11 +2,12 @@
     {{#ui-modal name="profile" id="editflow" class="noshad" onApprove=(action 'saveFlow') onDeny=(action 'cancelFlow')}}
       
       <div class="header">
-        <div class="fx">
-          <i class="close icon deny enodeclose" {{action 'cancelFlow'}}></i>
+        <div>
           <div class="header title">Edit Flow  </div>
         </div>
-        
+        <div class="closebox">
+          <i class="close icon deny enodeclose" {{action 'cancelFlow'}}></i>  
+        </div>
       </div>
       
       <form class="ui form pad24">
@@ -16,6 +17,14 @@
                 {{input type="text" value=selectedNode.name placeholder='Name'}}
               </div>
 
+
+              <select>
+              <option value='all'>All</option>
+                {{#each groups}}
+                    <option value={{id}}>{{name}}</option>
+                {{/each}}
+                
+              </select>
       </form>
 
       

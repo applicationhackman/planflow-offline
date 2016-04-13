@@ -2,9 +2,8 @@
 
 <div class="fx fh fw ohid cl">
 
-	<div class="ui menu nheader nomargin noshad">
-
-		 	
+	<div class="ui menu nheader nomargin noshad fx">
+		<div class="fx fx2">
 		  	<div class="ui item" {{action 'flowsback' this}}>
 		 		<div class="fsz22">
 		 			<i class="arrow left icon"></i>
@@ -14,24 +13,21 @@
 		  	{{input type='text' value=model.name class="fsz22 editable"}}
 		  	</div>
 
-		  	<div class="ui item nbf">
-		 			<i class="setting left icon"></i>
-		 		</div> 		
-		  	<div class="ui item">
-		 		<div class="padr20">
-		 			Type	
-		 		</div>
-		 		{{render 'plantypes' this }}	
-		  	</div>
-		  	<div class="field fx">
+		  	
+		</div>		 			
+		  
+		  	<div class="field fx fx2 fx-aend">
 		  		{{#each flowchartsymbols}}
 					{{render 'mainnode' this}}
 				{{/each}}	
+				<div class="ui item nbf">
+		 			<i class="setting left icon"></i>
+		 		</div> 	
 		  	</div>
 	
 	</div>	
 
-	<div class="fh fw sauto pad24">
+	<div class="fh fw sauto pad24 explorer">
 
 		{{#each model.nodes}}
 			{{render 'node' this}}
@@ -40,11 +36,9 @@
 	
 </div>
 
-{{#if editnode-dialog}}
-		<div class="fh msidebar">
+	 <div class="fh msidebar">
 		{{partial 'dialogs/editnode'}}		
 	</div>
-{{/if}}
 
 
 {{outlet}}

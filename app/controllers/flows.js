@@ -79,9 +79,7 @@ export default Ember.Controller.extend({
 				flow.get('nodes').pushObject(nnode);
 				flow.save();
 				
-				Em.run.later(function(){
-					$("#"+nnode.pid).css({left:x,top:y});
-				},600)
+				
 				
 
 			});
@@ -173,6 +171,13 @@ export default Ember.Controller.extend({
 			this.set('editnode-dialog',false);
 		},
 		selectnode : function(id){
+
+			console.log("selectedNode is here ",id);
+			
+			if(id === undefined){
+				return;
+			}
+			console.log("CSK selectnode is ",id);
 			var store = this.store;
 			var cobj  = this;
 			var flow = store.findById('flow',this.get('params.id'));
@@ -184,6 +189,7 @@ export default Ember.Controller.extend({
 					if(nodes[i].pid == id){
 
 							var snode = flow.get('nodes').get(i);
+							console.log(" selectnode is here ",snode);
 							cobj.set('selectedNode',snode);
 					}
 				}
@@ -193,17 +199,18 @@ export default Ember.Controller.extend({
 			});
 		}
 	},
+	flowTypeChanged : function(item,link){
+		this.set('model.flowtype',item.get(link).name);
+		this.get('model').save();
+
+	}.observes('flowtype'),
 	nodeSelected : function(){
 		$(".w.active").removeClass('active');
 		$("#"+this.get('selectedNode.pid')).addClass('active')
-		console.log("Node selectnode" , this.get('selectedNode.pid'), $("#"+this.get('selectedNode.pid')));
 
 	}.observes('selectedNode'),
 	nodeSelectedProp : function(){
-
-		console.log("node select property changing ",this.get('selectedNode.pid'));
-		this.send('selectnode',this.get('selectnode.pid'));
-
+		// this.send('selectnode',this.get('selectedNode.pid'));
 	}.observes('selectedNode.name','selectedNode.left','selectedNode.top','selectedNode.backgroundcolor','selectedNode.textcolor','selectedNode.bwidth')
 
 });

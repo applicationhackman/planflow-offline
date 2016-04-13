@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
 		createplandialog:false,
+		searchFlows : [],
 		newplan  : {
 			name:'',
 			description : ''
@@ -15,7 +16,7 @@ export default Ember.Controller.extend({
 			showPlan : function () {
 					console.log("showPlan is here ");
 					this.set('createplandialog',true);
-					$('.ui.modal').modal('show');
+					$('#createflow').modal('show');
 					
 			},
 			cancelPlan : function () {
@@ -47,6 +48,20 @@ export default Ember.Controller.extend({
 			},
 			cancelFlow : function(){
 				$('.ui.modal').modal('hide');
+			},
+			searchFlow : function(val){
+			  console.log("CSK trying to searchFlow ",this, arguments);
+			  var cobj = this;
+			  var flowItems = [];
+			  this.store.filter("flow",function(items){
+			  	if(items.get('name').toLowerCase().indexOf(val) >= 0){
+
+			  		flowItems.push(items)
+			  		
+				   
+			  	}
+			  })
+			  cobj.set('searchFlows',flowItems);
 			}
 		}
 

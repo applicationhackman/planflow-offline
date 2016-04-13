@@ -15,16 +15,37 @@
                 <label> Name</label>
                 {{input type="text" value=selectedNode.name placeholder='Name'}}
               </div>
-              <div class="field flex2">
+              {{!-- <div class="field flex2">
                   <label>Text Color</label>
-                  {{input type="color" value=selectedNode.textcolor placeholder='#000'}}
-                  {{input type="text" value=selectedNode.backgroundcolor placeholder='#000'}}
+                  {{#color-field value=selectedNode.textcolor placeholder='#000'}}
+                  {{/color-field}}
               </div>
               <div class="field flex2">
                   <label>Background Color</label>
-                  {{input type="color" value=selectedNode.backgroundcolor placeholder='#000'}}
-                  {{input type="text" value=selectedNode.textcolor placeholder='#000'}}
+                  {{#color-field value=selectedNode.backgroundcolor placeholder='#000'}}
+                  {{/color-field}}
+              </div> --}}
+
+               <div class="field flex2">
+                  <label> Types </label>
+                  {{!-- {{render 'plantypes' this }}   --}}
+
+                  {{log "this is here " this model}}
+                 {{!--  <select class="h36">
+                      {{#each this.plantypes}}
+                          <option value={{id}}>{{name}}</option>
+                      {{/each}}
+                      
+                    </select> --}}
+
+                    {{view "select" class="h36"
+                       content=this.plantypes
+                       optionValuePath="content.val"
+                       optionLabelPath="content.name"
+                       selection=this.flowtype}}
               </div>
+
+              
 
 
       </form>

@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
-	classNames : ['ui','item'],
+	classNames : ['ui','button','nobr'],
 	attributeBindings : ['draggable'],
 	draggable : true,
 	templateName :'mainnode',

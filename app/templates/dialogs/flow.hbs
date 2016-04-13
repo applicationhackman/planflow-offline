@@ -2,7 +2,7 @@
 {{/if}}
 
 
-      {{#ui-modal name="profile" class="profile" onApprove=(action 'createPlan') onDeny=(action 'cancelPlan')}}
+      {{#ui-modal name="profile" id="createflow" class="profile" onApprove=(action 'createPlan') onDeny=(action 'cancelPlan')}}
         <i class="close icon"></i>
         <div class="header">
           New Plan
@@ -16,6 +16,16 @@
           <label> Description</label>
           {{input type="text" valueBinding=newplan.description placeholder='Description'}}
         </div>
+        <div class="field">
+          <label>Type</label>
+            <select id="flowtypes">
+                <option value='flowchart'>Flowchart</option>
+                <option value='bezier'>Bezier</option>
+                <option value='statemachine'>Statemachine</option>
+                <option value='straight'>Straight</option>
+            </select>
+        </div>
+
 
       </form>
 
@@ -23,9 +33,8 @@
             <div class="ui black deny button">
               Cancel
             </div>
-            <div class="ui positive right labeled icon button">
+            <div class="ui positive right icon button bgreen">
               Ok
-              <i class="checkmark icon"></i>
             </div>
         </div>
         
